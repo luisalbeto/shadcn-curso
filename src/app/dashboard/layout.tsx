@@ -1,6 +1,7 @@
 // https://tailwindcomponents.com/component/tailwind-css-admin-dashboard-layout
 // https://gist.github.com/Klerith/3949f1c8b884d7101e378dfb668f0f3a
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 
 const links = [
@@ -10,6 +11,14 @@ const links = [
   { name: "alert-dialog", href: "alert-dialog" },
   { name: "dialog", href: "dialog" },
   { name: "badge", href: "badge" },
+  { name: "calendar", href: "calendar" },
+  { name: "avatar", href: "avatar" },
+  { name: "card", href: "card" },
+  { name: "carousel", href: "carousel" },
+
+
+
+
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 export default function DashboardLayout({
@@ -92,15 +101,17 @@ export default function DashboardLayout({
                 </svg>
                 <span className="self-center whitespace-nowrap ml-2">
                   {" "}
-                  Shadcn/ui
+                  Testing Shadcn/ui
                 </span>
               </a>
             </div>
             <div className="flex items-center">
               {/* User Avatar */}
-              <div className="bg-blue-500 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                FH
-              </div>
+              
+    <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
             </div>
           </div>
         </div>
@@ -260,9 +271,9 @@ export default function DashboardLayout({
             </div>
           </footer>
           <p className="text-center text-sm text-gray-500 my-10">
-            &copy; 2019-{new Date().getFullYear()}{" "}
+            &copy; {new Date().getFullYear()}{" "}
             <a href="#" className="hover:underline" target="_blank">
-              Themesberg
+              Luis Ramirez
             </a>
             . All rights reserved.
           </p>
